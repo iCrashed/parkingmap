@@ -1,0 +1,123 @@
+<html>
+  <head>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/konva@8.3.13/konva.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    
+
+    <script src=
+    "https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
+        </script>
+
+    <script>
+const firebaseConfig = {
+        apiKey: "AIzaSyDPuKnZ_W7X_NgcoTlGnzTMWI6ujl2rKyg",
+        authDomain: "parking-system-365621.firebaseapp.com",
+        databaseURL: "https://parking-system-365621-default-rtdb.firebaseio.com",
+        projectId: "parking-system-365621",
+        storageBucket: "parking-system-365621.appspot.com",
+        messagingSenderId: "514457351378",
+        appId: "1:514457351378:web:fd8054194b6cacd0d9e90b",
+        measurementId: "G-QBNBKYZG1Q",
+        databaseURL: "https://parking-system-365621-default-rtdb.firebaseio.com",
+};
+
+
+
+      firebase.initializeApp(firebaseConfig);
+
+
+
+
+
+      
+       
+    
+  </script>
+
+
+    <meta charset="utf-8" />
+    <title>Konva Simple Load Demo</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+        
+
+    
+      var stage;
+      function drawmap(data){
+         stage = Konva.Node.create(data, 'container');
+      }
+      
+
+      
+
+ 
+
+   
+
+ 
+
+
+
+
+    var drawingRef = firebase.database()
+          .ref('parking/parkingSpace2');
+          drawingRef.on('value', (snapshot) => {  
+          const data = snapshot.val();
+          drawmap(data.state)  
+          });
+
+
+      
+
+      var messagesRef = firebase.database()
+          .ref('occupancy/');
+          messagesRef.on('value', (snapshot) => {
+          const data = snapshot.val();
+          occupancyfill(data);
+      });
+
+
+      function occupancyfill(occupieds){
+
+        location.reload();  
+        var occupied = Array();
+
+        occupieds.forEach(el =>{
+            if(el.state == 'occupied') occupied.push(el.slot);
+          })
+
+        var shapes = stage.find('Rect');
+        shapes.forEach(element => {
+            
+            element.setAttr("draggable",false);
+            if(element.getAttr("fill") === "magenta"){
+              k = parseInt(element.getAttr('pName'))
+              if( occupied.includes(k)) element.setAttr('fill','red') 
+              else element.setAttr('fill','green')
+            }
+            var groups = stage.find('Group')
+            groups.forEach((elements)=>{
+                elements.setAttr("draggable",false);
+            })
+        });
+      }
+     
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "parkingmap",
+  "version": "1.0.0",
+  "description": "parking-map-canvas",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.12.1"
+  }
+}

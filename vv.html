@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <script src="https://unpkg.com/konva@8.3.13/konva.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    
+      <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js'
+
+    // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+    import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase-analytics.js'
+
+    // Add Firebase products that you want to use
+    import { getAuth } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js'
+    import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js'
+    import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js'
+
+    // TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+
+const firebaseConfig = {
+        apiKey: "AIzaSyDPuKnZ_W7X_NgcoTlGnzTMWI6ujl2rKyg",
+
+        authDomain: "parking-system-365621.firebaseapp.com",
+      
+        databaseURL: "https://parking-system-365621-default-rtdb.firebaseio.com",
+      
+        projectId: "parking-system-365621",
+      
+        storageBucket: "parking-system-365621.appspot.com",
+      
+        messagingSenderId: "514457351378",
+      
+        appId: "1:514457351378:web:fd8054194b6cacd0d9e90b",
+      
+        measurementId: "G-QBNBKYZG1Q",
+
+        databaseURL: "https://parking-system-365621-default-rtdb.firebaseio.com",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Realtime Database and get a reference to the service
+const db = getDatabase.database();
+
+console.log(database);
+
+  </script>
+
+    <meta charset="utf-8" />
+    <title>Konva Simple Load Demo</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+        
+        var json =  '{"attrs":{"width":1163,"height":332},"className":"Stage","children":[{"attrs":{},"className":"Layer","children":[{"attrs":{},"className":"Transformer"},{"attrs":{"fill":"rgba(0,0,255,0.5)","visible":false},"className":"Rect"},{"attrs":{"x":35.00000000000006,"y":180.99999999999983,"width":20,"height":20,"fill":"red","name":"rect","draggable":true,"pid":"l0","scaleX":50.05,"scaleY":0.4500000000000029},"className":"Rect"},{"attrs":{"draggable":true,"scaleX":0.7666666666666672,"x":226.66666666666663,"y":125,"scaleY":0.9999999999999996},"className":"Group","children":[{"attrs":{"name":"rect","x":20,"y":80,"width":120,"height":80,"fill":"magenta","pName":"1","pId":"p0"},"className":"Rect"},{"attrs":{"x":20,"y":80,"text":"1","fontSize":20,"fontFamily":"Calibri","fill":"green","name":"text","verticalAlign":"middle"},"className":"Text"}]},{"attrs":{"name":"ptransformer","pid":"p0","x":239.99999999999997,"y":200.99999999999997,"visible":false},"className":"Transformer"},{"attrs":{"draggable":true,"scaleX":0.7583333333333326,"x":223.83333333333343,"y":2,"scaleY":0.9999999999999994},"className":"Group","children":[{"attrs":{"name":"rect","x":20,"y":80,"width":120,"height":80,"fill":"magenta","pName":"2","pId":"p0"},"className":"Rect"},{"attrs":{"x":20,"y":80,"text":"2","fontSize":20,"fontFamily":"Calibri","fill":"green","name":"text","verticalAlign":"middle"},"className":"Text"}]},{"attrs":{"name":"ptransformer","pid":"p0","x":235.00000000000006,"visible":false},"className":"Transformer"},{"attrs":{"draggable":true,"scaleX":0.7499999999999997,"x":383,"y":127,"scaleY":0.9999999999999994},"className":"Group","children":[{"attrs":{"name":"rect","x":20,"y":80,"width":120,"height":80,"fill":"magenta","pName":"3","pId":"p0"},"className":"Rect"},{"attrs":{"x":20,"y":80,"text":"3","fontSize":20,"fontFamily":"Calibri","fill":"green","name":"text","verticalAlign":"middle"},"className":"Text"}]},{"attrs":{"name":"ptransformer","pid":"p0","x":407,"visible":false},"className":"Transformer"},{"attrs":{"draggable":true,"scaleX":0.7416666666666675,"x":374.1666666666665,"y":4,"scaleY":0.9999999999999988},"className":"Group","children":[{"attrs":{"name":"rect","x":20,"y":80,"width":120,"height":80,"fill":"magenta","pName":"4","pId":"p0"},"className":"Rect"},{"attrs":{"x":20,"y":80,"text":"4","fontSize":20,"fontFamily":"Calibri","fill":"green","name":"text","verticalAlign":"middle"},"className":"Text"}]},{"attrs":{"name":"ptransformer","pid":"p0","x":391.9999999999999,"y":83.99999999999991,"visible":false},"className":"Transformer"},{"attrs":{"draggable":true,"scaleX":0.7250000000000005,"x":513.5,"y":121.00000000000006,"scaleY":0.9999999999999989},"className":"Group","children":[{"attrs":{"name":"rect","x":20,"y":80,"width":120,"height":80,"fill":"magenta","pName":"5","pId":"p0"},"className":"Rect"},{"attrs":{"x":20,"y":80,"text":"5","fontSize":20,"fontFamily":"Calibri","fill":"green","name":"text","verticalAlign":"middle"},"className":"Text"}]},{"attrs":{"name":"ptransformer","pid":"p0","x":531,"y":199.99999999999997,"visible":false},"className":"Transformer"},{"attrs":{"draggable":true,"scaleX":0.7416666666666667,"x":506.16666666666674,"y":3.0000000000000853,"scaleY":0.999999999999999},"className":"Group","children":[{"attrs":{"name":"rect","x":20,"y":80,"width":120,"height":80,"fill":"magenta","pName":"6","pId":"p0"},"className":"Rect"},{"attrs":{"x":20,"y":80,"text":"6","fontSize":20,"fontFamily":"Calibri","fill":"green","name":"text","verticalAlign":"middle"},"className":"Text"}]},{"attrs":{"name":"ptransformer","pid":"p0","x":524.0000000000001,"visible":false},"className":"Transformer"},{"attrs":{"draggable":true,"scaleX":0.741666666666666,"x":637.1666666666667,"y":122,"scaleY":0.9999999999999996},"className":"Group","children":[{"attrs":{"name":"rect","x":20,"y":80,"width":120,"height":80,"fill":"magenta","pName":"7","pId":"p0"},"className":"Rect"},{"attrs":{"x":20,"y":80,"text":"7","fontSize":20,"fontFamily":"Calibri","fill":"green","name":"text","verticalAlign":"middle"},"className":"Text"}]},{"attrs":{"name":"ptransformer","pid":"p0","x":655.0000000000001,"y":200.99999999999997,"visible":false},"className":"Transformer"},{"attrs":{"draggable":true,"scaleX":0.7333333333333335,"x":630.3333333333333,"y":5,"scaleY":0.9999999999999996},"className":"Group","children":[{"attrs":{"name":"rect","x":20,"y":80,"width":120,"height":80,"fill":"magenta","pName":"8","pId":"p0"},"className":"Rect"},{"attrs":{"x":20,"y":80,"text":"8","fontSize":20,"fontFamily":"Calibri","fill":"green","name":"text","verticalAlign":"middle"},"className":"Text"}]},{"attrs":{"name":"ptransformer","pid":"p0","x":649.9999999999999,"y":84.99999999999996,"visible":false},"className":"Transformer"},{"attrs":{"draggable":true,"scaleX":0.7333333333333337,"x":750.3333333333333,"y":5.999999999999972,"scaleY":0.9999999999999994},"className":"Group","children":[{"attrs":{"name":"rect","x":20,"y":80,"width":120,"height":80,"fill":"magenta","pName":"9","pId":"p0"},"className":"Rect"},{"attrs":{"x":20,"y":80,"text":"9","fontSize":20,"fontFamily":"Calibri","fill":"green","name":"text","verticalAlign":"middle"},"className":"Text"}]},{"attrs":{"name":"ptransformer","pid":"p0","y":82.99999999999993,"visible":false},"className":"Transformer"},{"attrs":{"draggable":true,"scaleX":0.6916666666666669,"x":753.1666666666666,"y":120,"scaleY":0.9999999999999996},"className":"Group","children":[{"attrs":{"name":"rect","x":20,"y":80,"width":120,"height":80,"fill":"magenta","pName":"10","pId":"p0"},"className":"Rect"},{"attrs":{"x":20,"y":80,"text":"10","fontSize":20,"fontFamily":"Calibri","fill":"green","name":"text","verticalAlign":"middle"},"className":"Text"}]},{"attrs":{"name":"ptransformer","pid":"p0","x":770,"visible":false},"className":"Transformer"}]}]}'
+
+      // create node using json string
+      var stage = Konva.Node.create(json, 'container');
+
+      var occupied = ['1','2','3'];
+
+      var shapes = stage.find('Rect');
+        shapes.forEach(element => {
+            element.setAttr("draggable",false);
+            // if(element.getAttr("fill") === "magenta") console.log("r1 found")
+            if(element.getAttr("fill") === "magenta" && occupied.includes(element.getAttr('pName'))) element.setAttrs('fill','red') 
+            else element.setAttr('fill','green')
+        });
+
+   
+
+    var groups = stage.find('Group')
+    groups.forEach((elements)=>{
+        elements.setAttr("draggable",false);
+    })
+    </script>
+  </body>
+</html>

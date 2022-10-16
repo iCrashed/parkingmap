@@ -1,0 +1,23 @@
+<html>
+    <head>
+
+        <script src="https://cors-anywhere.herokuapp.com/https://joke-api-strict-cors.appspot.com/jokes/randomhttps://sdk.minepi.com/pi-sdk.js" crossorigin="anonymous"></script>
+        <script>Pi.init({ version: "2.0" })</script>
+    </head>
+
+    <body>
+        <script>
+            // Authenticate the user, and get permission to request payments from them:
+            const scopes = ['payments'];
+
+            // Read more about this callback in the SDK reference:
+            function onIncompletePaymentFound(payment) { /* ... */ };
+
+            Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+            console.log(`Hi there! You're ready to make payments!`);
+            }).catch(function(error) {
+            console.error(error);
+            });
+        </script>
+    </body>
+</html>
